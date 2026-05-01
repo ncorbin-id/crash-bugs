@@ -1179,3 +1179,64 @@ body.m3-page {
   font-size: 12px;
   color: var(--md-sys-color-outline);
 }
+
+
+/* ════════════════════════════════════════
+   MOBILE (≤ 640px)
+   ════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+
+  /* ── SF pages: let the document scroll ── */
+  body.sf-page {
+    height: auto;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  /* ── Global nav: hide search bar, tighten icons ── */
+  .global-nav-search { display: none; }
+  .global-nav-icons { gap: 10px; }
+
+  /* ── App nav: scroll horizontally without a visible scrollbar ── */
+  .app-nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .app-nav::-webkit-scrollbar { display: none; }
+
+  /* ── Case body: drop side-by-side grid ── */
+  .case-body {
+    display: block;
+    overflow: visible;
+  }
+
+  /* ── Feed pane: full width, no clipping ── */
+  .feed-pane {
+    overflow: visible;
+    border-right: none;
+  }
+
+  /* ── Details pane: hide — same info is in the case header subtitle ── */
+  .details-pane { display: none; }
+
+  /* ── Decision card: stack prompt above buttons ── */
+  .decision-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* ── Queue table: enable horizontal scroll inside its container ── */
+  .table-scroll-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ── M3 pages: reduce top padding and heading size ── */
+  .page { padding-top: 24px; }
+  .intro-heading { font-size: 26px; }
+
+}
