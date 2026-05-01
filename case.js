@@ -1,31 +1,63 @@
 // Generic case page component system — shared across all case pages.
 // Behavior is declared entirely via data attributes on HTML elements.
-// Requires: scrollFeed() and markClosed() from app.js.
+// Requires: scrollFeed(), markClosed(), updateFinalBtn() from app.js.
+
+const PAGE_KEY = (() => {
+  const id = document.body.dataset.caseId;
+  return id ? `case${id}progress` : null;
+})();
+
+function saveState() {
+  if (!PAGE_KEY) return;
+  const state = {};
+  document.querySelectorAll('[id]').forEach(el => {
+    state[el.id] = el.style.display;
+  });
+  localStorage.setItem(PAGE_KEY, JSON.stringify(state));
+}
+
+function restoreState() {
+  if (!PAGE_KEY) return;
+  const saved = localStorage.getItem(PAGE_KEY);
+  if (!saved) return;
+  const state = JSON.parse(saved);
+  Object.entries(state).forEach(([id, display]) => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = display;
+  });
+  document.querySelectorAll('[data-mark-closed]').forEach(btn => {
+    updateFinalBtn(btn.closest('[id]') || btn.parentElement);
+  });
+  scrollFeed();
+}
+
+document.addEventListener('DOMContentLoaded', restoreState);
 
 document.addEventListener('click', e => {
   const btn = e.target.closest('[data-reveals], [data-mark-closed]');
   if (!btn) return;
 
-  // Mark a case closed in localStorage before the browser follows the href
-  if (btn.dataset.markClosed) markClosed(btn.dataset.markClosed);
+  if (btn.dataset.markClosed) {
+    markClosed(btn.dataset.markClosed);
+    if (PAGE_KEY) localStorage.removeItem(PAGE_KEY);
+  }
   if (!btn.dataset.reveals) return;
 
-  // What to hide: the whole decision card, or just the button itself
   const decisionCard = btn.closest('.decision-card');
   if (decisionCard) {
     decisionCard.style.display = 'none';
   } else {
     btn.style.display = 'none';
   }
+  saveState();
 
-  // Reveal an element by clearing its inline display — lets CSS determine the display type
-  // (.decision-card gets flex, .completion-card gets flex, plain divs get block, etc.)
   function show(id) {
     const el = document.getElementById(id);
     if (!el) return;
     el.style.removeProperty('display');
     updateFinalBtn(el);
     scrollFeed();
+    saveState();
   }
 
   const delay = parseInt(btn.dataset.delay) || 0;

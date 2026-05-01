@@ -36,11 +36,15 @@ function toggle(id) {
 }
 
 function startSimulation() {
-  ['case1closed', 'case2closed', 'case3closed', 'case4closed'].forEach(k => localStorage.removeItem(k));
+  ['case1closed','case2closed','case3closed','case4closed',
+   'case1owned','case2owned','case3owned','case4owned',
+   'case1progress','case2progress','case3progress','case4progress'].forEach(k => localStorage.removeItem(k));
   window.location.href = 'queue.html';
 }
 
 function restartSimulation() {
-  ['case1closed', 'case2closed', 'case3closed', 'case4closed'].forEach(k => localStorage.removeItem(k));
+  ['case1closed','case2closed','case3closed','case4closed',
+   'case1owned','case2owned','case3owned','case4owned',
+   'case1progress','case2progress','case3progress','case4progress'].forEach(k => localStorage.removeItem(k));
   window.location.href = 'index.html';
 }

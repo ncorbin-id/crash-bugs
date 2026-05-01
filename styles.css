@@ -176,6 +176,20 @@ body.m3-page {
   border-bottom-color: var(--sf-blue);
 }
 
+a.app-nav-item {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-nav-item.clickable {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.app-nav-item.clickable:hover {
+  background: var(--sf-row-hover);
+}
+
 /* ── Case header ── */
 
 .case-header {
@@ -838,6 +852,7 @@ body.m3-page {
 }
 
 .status-new { background: #e8f4fd; color: var(--sf-blue); }
+.status-owned { background: #f3eeff; color: var(--sf-purple); }
 .status-closed { background: var(--sf-bg); color: var(--sf-text-muted); }
 
 .own-btn {

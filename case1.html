@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="sf-page">
+<body class="sf-page" data-case-id="1">
 
 <!-- Global Nav -->
 <div class="global-nav">
@@ -28,7 +28,7 @@
 <div class="app-nav">
   <div class="app-nav-item"><span class="material-symbols-outlined" style="font-size:15px">grid_view</span></div>
   <div class="app-nav-item">Home</div>
-  <div class="app-nav-item active">Cases</div>
+  <a class="app-nav-item active clickable" href="queue.html">Cases</a>
   <div class="app-nav-item">Accounts</div>
   <div class="app-nav-item">Contacts</div>
   <div class="app-nav-item">Reports</div>
@@ -75,7 +75,7 @@
       </div>
 
       <!-- Action: Call Burt -->
-      <button class="call-btn"
+      <button id="callBurtBtn" class="call-btn"
         data-reveals="chatLog"
         data-also-reveals="logNotesBtn"
         data-also-delay="300">
@@ -128,7 +128,7 @@
       <!-- Decision feedback: No (incorrect) -->
       <div id="feedbackNo" class="feedback-card yellow" style="display:none">
         <p>At this point, you have reproducible steps that consistently produce a crash. The product team will be able to take this workflow, reproduce it, and examine a possible resolution from here. Remember that the software shouldn't crash as a response to an error. If there is an error, it should be handled gracefully and not unexpectedly close. You should proceed with logging a crash bug.</p>
-        <button class="call-btn" style="margin-top:12px;"
+        <button id="feedbackNoBugBtn" class="call-btn" style="margin-top:12px;"
           data-reveals="bugLogged"
           data-also-reveals="callBurt2Btn">Log a crash bug</button>
       </div>
