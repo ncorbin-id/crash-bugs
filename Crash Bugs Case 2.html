@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case 00100002 – Crash Bugs</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="sf-page">
+
+<!-- Global Nav -->
+<div class="global-nav">
+  <div class="global-nav-logo"><span class="material-symbols-outlined">cloud</span>TechSupport</div>
+  <div class="global-nav-search"><span class="material-symbols-outlined">search</span>Search...</div>
+  <div class="global-nav-icons">
+    <span class="material-symbols-outlined">home</span>
+    <span class="material-symbols-outlined">add_circle</span>
+    <span class="material-symbols-outlined">notifications</span>
+    <span class="material-symbols-outlined">help</span>
+    <span class="material-symbols-outlined">settings</span>
+    <div class="avatar">YO</div>
+  </div>
+</div>
+
+<!-- App Nav -->
+<div class="app-nav">
+  <div class="app-nav-item"><span class="material-symbols-outlined" style="font-size:15px">grid_view</span></div>
+  <div class="app-nav-item">Home</div>
+  <div class="app-nav-item active">Cases</div>
+  <div class="app-nav-item">Accounts</div>
+  <div class="app-nav-item">Contacts</div>
+  <div class="app-nav-item">Reports</div>
+</div>
+
+<!-- Case Header -->
+<div class="case-header">
+  <div class="case-breadcrumb"><a href="Crash Bugs Cases.html">Cases</a> / All Unowned Cases</div>
+  <div class="case-title-row">
+    <div class="case-icon"><span class="material-symbols-outlined">cases</span></div>
+    <div>
+      <div class="case-title">The software won't start</div>
+      <div class="case-subtitle">Case 00100002 · Maria T. · Opened 4/28/2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- Body -->
+<div class="case-body">
+
+  <div class="feed-pane">
+    <div class="feed-label">Feed</div>
+    <div class="feed-content">
+
+      <!-- Call transcript: incoming call (placed on hold) -->
+      <div class="chat-log">
+        <div class="chat-label">
+          <span class="material-symbols-outlined">call</span>
+          Transcript: Incoming call from Maria T. 4/28/2026 10:02 AM
+        </div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Hi Maria, looks like the software isn't starting for you, is that correct?</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Maria T.</div><div class="bubble-text">Yes, that's correct. I'm brand new to working with this software, and I can't even get it to start! It crashes as soon as I open it.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Let's figure out what's going on and get you started with your workflows. Can we get on a screenshare so I can see what you are seeing?</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Okay, I can see your screen. Go ahead and try opening the software.</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Maria T.</div><div class="bubble-text">Sure—see, it crashes immediately when it opens. Every single time.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">I see that, thank you. Can you tell me which version of the software you're running, and what operating system you're on?</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Maria T.</div><div class="bubble-text">I'm on the latest version. And I'm running an older version of the operating system—my IT department hasn't upgraded us yet.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Got it. Let me check the documentation real quick to confirm your OS is supported for this version. <em>(Checking...)</em> Good news—your operating system is on the supported list.</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Maria T.</div><div class="bubble-text">Oh good. So why is it crashing?</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">That's what I'd like to figure out. I'm going to do a bit more research on my end. I actually have a colleague running the same OS—I may want to test there. Do you mind if I put you on a brief hold while I confirm?</div></div>
+        <div class="chat-end-note">Call on hold</div>
+      </div>
+
+      <!-- Decision: Try to reproduce on another machine? -->
+      <div id="decisionCard" class="decision-card">
+        <div class="decision-prompt">Should you try to reproduce on another machine?</div>
+        <div class="decision-btns">
+          <button class="call-btn" data-reveals="feedbackYes">Yes</button>
+          <button class="call-btn" data-reveals="feedbackNo">No</button>
+        </div>
+      </div>
+
+      <!-- Decision feedback: Yes (less ideal) -->
+      <div id="feedbackYes" class="feedback-card yellow" style="display:none">
+        <p>You could try to reproduce, but it's likely not the best use of time. You know that the operating system is supported, which means that it was tested thoroughly by the product team and has been proven to work with the software. It's not likely the operating system causing the issue.</p>
+        <p style="margin-top:10px;">A more useful test would be to check if Maria's system as a whole meets the minimum system requirements. The best way to do this is by having Maria run the <em>Can You Run It</em> tool on her machine.</p>
+        <button class="call-btn" style="margin-top:12px;"
+          data-reveals="cyriLog"
+          data-also-reveals="decisionCard2">Use <em>Can You Run It</em></button>
+      </div>
+
+      <!-- Decision feedback: No (correct) -->
+      <div id="feedbackNo" class="feedback-card green" style="display:none">
+        <p>The operating system is supported, so trying to reproduce the issue in-house will likely result in the software opening normally. In this case, trying to reproduce will not be the most effective use of time.</p>
+        <p style="margin-top:10px;">A more useful test would be to check if Maria's system as a whole meets the minimum system requirements. The best way to do this is by having Maria run the <em>Can You Run It</em> tool on her machine.</p>
+        <button class="call-btn" style="margin-top:12px;"
+          data-reveals="cyriLog"
+          data-also-reveals="decisionCard2">Use <em>Can You Run It</em></button>
+      </div>
+
+      <!-- Call transcript: Can You Run It follow-up -->
+      <div id="cyriLog" class="chat-log" style="display:none">
+        <div class="chat-label">
+          <span class="material-symbols-outlined">call</span>
+          Transcript: Follow-up call with Maria T. 4/28/2026 10:47 AM
+        </div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Hi Maria, I'd like to have you run a tool called Can You Run It on your machine. It checks whether your system meets the minimum requirements for the software. Would you be able to do that now?</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Maria T.</div><div class="bubble-text">Sure, I can do that. Give me just a moment. Okay, it's running… it says my system doesn't pass.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Thanks for running that. It looks like your machine doesn't have the minimum .NET version required to run the latest version of the software. That's likely what's causing the crash at startup.</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Maria T.</div><div class="bubble-text">Oh, that makes sense. So what do I do?</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">You'll want to put in a ticket with your IT department to get .NET upgraded on your machine. Once that's done, the software should open without any issues.</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Maria T.</div><div class="bubble-text">That's actually really helpful—at least now I have a concrete answer to give them. I'll get that ticket in today.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Glad we were able to track that down. I'll keep your case on hold while you wait for IT to take care of it.</div></div>
+        <div class="chat-end-note">Call ended</div>
+      </div>
+
+      <!-- Decision: Log a crash bug? -->
+      <div id="decisionCard2" class="decision-card" style="display:none">
+        <div class="decision-prompt">Great! But do you log a crash bug? The crash was reproducible for Maria every time she tried to open the software.</div>
+        <div class="decision-btns">
+          <button class="call-btn" data-reveals="feedback2Yes">Yes</button>
+          <button class="call-btn" data-reveals="feedback2No">No</button>
+        </div>
+      </div>
+
+      <!-- Decision feedback: Yes (incorrect) -->
+      <div id="feedback2Yes" class="feedback-card yellow" style="display:none">
+        <p>Even though the crash was reproducible, the system was not ready for installation. Making sure the system meets minimum requirements is mandatory prior to installing the software, so logging a crash bug for this case is not appropriate.</p>
+        <button class="call-btn" style="margin-top:12px;"
+          data-reveals="caseNotes"
+          data-also-reveals="placeHoldBtn">Continue without logging a crash bug</button>
+      </div>
+
+      <!-- Decision feedback: No (correct) -->
+      <div id="feedback2No" class="feedback-card green" style="display:none">
+        <p>Correct, since the system didn't meet the minimum requirements, this is not an appropriate time to log a crash bug.</p>
+        <button class="call-btn" style="margin-top:12px;"
+          data-reveals="caseNotes"
+          data-also-reveals="placeHoldBtn">Continue without logging a crash bug</button>
+      </div>
+
+      <!-- Case notes -->
+      <div id="caseNotes" class="notes-card" style="display:none">
+        <div class="notes-label">Case notes</div>
+        <div class="notes-body">.NET version outdated. Placing case on hold while IT dept upgrades .NET.</div>
+      </div>
+
+      <!-- Action: Place hold -->
+      <button id="placeHoldBtn" class="call-btn" style="display:none"
+        data-reveals="holdBanner"
+        data-also-reveals="followupGroup">
+        <span class="material-symbols-outlined">pause_circle</span>
+        Place hold
+      </button>
+
+      <!-- Case status: Case on hold -->
+      <div id="holdBanner" class="case-closed-banner" style="display:none">Case on hold</div>
+
+      <!-- Follow-up email + Case closed + Own another case -->
+      <div id="followupGroup" class="feed-group" style="display:none">
+
+        <div class="email-card">
+          <div class="email-header">
+            <div class="email-avatar">MT</div>
+            <div>
+              <div class="email-from">Maria T.</div>
+              <div class="email-addr">maria.t@example.com</div>
+            </div>
+            <div class="email-date">4/30/2026, 8:52 AM</div>
+          </div>
+          <div class="email-subject-row">
+            <div class="email-subject-label">Subject</div>
+            <div class="email-subject-value">Re: The software won't start</div>
+          </div>
+          <div class="email-body">
+            <p>Hi,</p>
+            <p>Good news—my IT department upgraded .NET yesterday and I just tried opening the software again. It's working great! Thank you so much for your help tracking down the issue.</p>
+            <p>You can go ahead and close my case.</p>
+            <p class="email-sig">Thanks again,<br>Maria T.</p>
+          </div>
+        </div>
+
+        <div class="case-closed-banner">Case closed</div>
+
+        <div class="completion-card">
+          <div class="completion-title">Nice work!</div>
+          <div class="completion-body">You correctly identified the source of the crash and resolved Maria's issue without needing to log a bug. Her case is now closed.</div>
+          <a href="Crash Bugs Cases.html" class="call-btn" style="margin-top:16px;"
+            data-mark-closed="case2closed">
+            <span class="material-symbols-outlined">arrow_forward</span>
+            Own another case
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Details -->
+  <div class="details-pane">
+    <div class="details-label">Details</div>
+    <div class="details-content">
+      <div class="detail-field">
+        <div class="detail-field-label">Case Number</div>
+        <div class="detail-field-value link">00100002</div>
+      </div>
+      <div class="detail-field">
+        <div class="detail-field-label">Contact Name</div>
+        <div class="detail-field-value">Maria T.</div>
+      </div>
+      <div class="detail-field">
+        <div class="detail-field-label">Date Opened</div>
+        <div class="detail-field-value">4/28/2026, 10:02 AM</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+<script src="case.js"></script>
+</body>
+</html>

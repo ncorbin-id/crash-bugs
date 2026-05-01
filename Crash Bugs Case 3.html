@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case 00100003 – Crash Bugs</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="sf-page">
+
+<!-- Global Nav -->
+<div class="global-nav">
+  <div class="global-nav-logo"><span class="material-symbols-outlined">cloud</span>TechSupport</div>
+  <div class="global-nav-search"><span class="material-symbols-outlined">search</span>Search...</div>
+  <div class="global-nav-icons">
+    <span class="material-symbols-outlined">home</span>
+    <span class="material-symbols-outlined">add_circle</span>
+    <span class="material-symbols-outlined">notifications</span>
+    <span class="material-symbols-outlined">help</span>
+    <span class="material-symbols-outlined">settings</span>
+    <div class="avatar">YO</div>
+  </div>
+</div>
+
+<!-- App Nav -->
+<div class="app-nav">
+  <div class="app-nav-item"><span class="material-symbols-outlined" style="font-size:15px">grid_view</span></div>
+  <div class="app-nav-item">Home</div>
+  <div class="app-nav-item active">Cases</div>
+  <div class="app-nav-item">Accounts</div>
+  <div class="app-nav-item">Contacts</div>
+  <div class="app-nav-item">Reports</div>
+</div>
+
+<!-- Case Header -->
+<div class="case-header">
+  <div class="case-breadcrumb"><a href="Crash Bugs Cases.html">Cases</a> / All Unowned Cases</div>
+  <div class="case-title-row">
+    <div class="case-icon"><span class="material-symbols-outlined">cases</span></div>
+    <div>
+      <div class="case-title">The software crashed last night</div>
+      <div class="case-subtitle">Case 00100003 · Deshawn R. · Opened 4/28/2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- Body -->
+<div class="case-body">
+
+  <div class="feed-pane">
+    <div class="feed-label">Feed</div>
+    <div class="feed-content">
+
+      <!-- Call transcript: incoming call (placed on hold) -->
+      <div class="chat-log">
+        <div class="chat-label">
+          <span class="material-symbols-outlined">call</span>
+          Transcript: Incoming call from Deshawn R. 4/28/2026 8:47 AM
+        </div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Hi Deshawn, I can see from these notes that the software crashed on you last night—is that right? Can you tell me more about what happened?</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Deshawn R.</div><div class="bubble-text">Yes, that's right. I was in the middle of working with my data when the software froze up. I don't remember exactly what I was doing, but when it started freezing I just started clicking around to see if anything would respond. Nothing did, and then it crashed. It asked me to send in a report and I did, but I'm not sure if anyone reads those so I figured I'd call this morning.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">I'm glad to hear you submitted the error report when it happened. We do have a team of people that reviews those crash reports. If you include your contact information, we can even notify you when we have a high-confidence fix for a crash—or if we need more information on what was happening when the crash occurred, we can reach out to you too. Can we start a screenshare so we can try to reproduce the crash?</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Deshawn R.</div><div class="bubble-text">Sure. This is what I did… but it looks like it's working fine now.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Yeah, I see. Let me look up your crash report and see if there's any information in there. Do you mind if I place you on a brief hold?</div></div>
+        <div class="chat-end-note">Call on hold</div>
+      </div>
+
+      <!-- Action: Analyze crash report -->
+      <button class="call-btn"
+        data-reveals="decisionCard">
+        <span class="material-symbols-outlined">analytics</span>
+        Analyze crash report
+      </button>
+
+      <!-- Decision: Log a crash bug? -->
+      <div id="decisionCard" class="decision-card" style="display:none">
+        <div class="decision-prompt">There aren't any obvious clues in the crash report. Maybe this was a one-time fluke, but Deshawn still did experience a crash last night. Do you log a crash bug?</div>
+        <div class="decision-btns">
+          <button class="call-btn" data-reveals="feedbackYes">Yes</button>
+          <button class="call-btn" data-reveals="feedbackNo">No</button>
+        </div>
+      </div>
+
+      <!-- Decision feedback: Yes (less ideal) -->
+      <div id="feedbackYes" class="feedback-card yellow" style="display:none">
+        <p>As of right now, you have no concrete reproducible steps to share with a developer to investigate this issue. This is not an appropriate time to log a crash bug.</p>
+        <p style="margin-top:10px;">However, you can still assure Deshawn that the crash is something worth monitoring. If he ever is able to reproduce the crash, we want to know about it.</p>
+        <p style="margin-top:10px;">You can continue to be helpful even though the issue is no longer present.</p>
+        <button class="call-btn" style="margin-top:12px;"
+          data-reveals="cyriLog"
+          data-also-reveals="placeHoldBtn">
+          <span class="material-symbols-outlined">call</span>
+          Return to the call
+        </button>
+      </div>
+
+      <!-- Decision feedback: No (correct) -->
+      <div id="feedbackNo" class="feedback-card green" style="display:none">
+        <p>That's correct, since we do not yet have a reproducible crash, we don't have enough information to log a crash bug.</p>
+        <p style="margin-top:10px;">However, you can still assure Deshawn that the crash is something worth monitoring. If he ever is able to reproduce the crash, we want to know about it.</p>
+        <p style="margin-top:10px;">You can continue to be helpful even though the issue is no longer present.</p>
+        <button class="call-btn" style="margin-top:12px;"
+          data-reveals="cyriLog"
+          data-also-reveals="placeHoldBtn">
+          <span class="material-symbols-outlined">call</span>
+          Return to the call
+        </button>
+      </div>
+
+      <!-- Call transcript: follow-up -->
+      <div id="cyriLog" class="chat-log" style="display:none">
+        <div class="chat-label">
+          <span class="material-symbols-outlined">call</span>
+          Transcript: Incoming call from Deshawn R. 4/28/2026 8:47 AM
+        </div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">There wasn't anything in the crash report that told me anything about the source of the crash, but I'd like to offer you some peace of mind in case it does happen again.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">How about we keep this case on hold for another few days and I'll check in with you at the end of the week. If you experience another crash within that time, just call or email me back and we'll take another look.</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Deshawn R.</div><div class="bubble-text">That sounds great. I'm glad the issue is at least resolved for now, and I'll let you know if anything else happens.</div></div>
+        <div class="chat-end-note">Call ended</div>
+      </div>
+
+      <!-- Action: Place on hold -->
+      <button id="placeHoldBtn" class="call-btn" style="display:none"
+        data-reveals="holdBanner"
+        data-also-reveals="callDeshawnBtn">
+        <span class="material-symbols-outlined">pause_circle</span>
+        Place on hold
+      </button>
+
+      <!-- Case status: Case on hold -->
+      <div id="holdBanner" class="case-closed-banner" style="display:none">Case on hold</div>
+
+      <!-- Action: Call Deshawn (follow-up) -->
+      <button id="callDeshawnBtn" class="call-btn" style="display:none"
+        data-reveals="chatLog2"
+        data-also-reveals="completion"
+        data-also-delay="400">
+        <span class="material-symbols-outlined">call</span>
+        Call Deshawn
+      </button>
+
+      <!-- Call transcript: check-in -->
+      <div id="chatLog2" class="chat-log" style="display:none">
+        <div class="chat-label">
+          <span class="material-symbols-outlined">call</span>
+          Transcript: Phone call with Deshawn R. 5/2/2026 9:00 AM
+        </div>
+        <div class="chat-bubble customer"><div class="bubble-name">Deshawn R.</div><div class="bubble-text">Thanks for checking in, but I have no news for you. The software never crashed again, which is great! But I do still worry it'll happen again.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">I'm also glad to hear things are okay now. But don't worry, if you do experience the crash again, send the error report with your contact info again and then contact me back under this case number. We can continue where we left off.</div></div>
+        <div class="chat-end-note">Call ended</div>
+      </div>
+
+      <!-- Case closed + Own another case -->
+      <div id="completion" class="feed-group" style="display:none">
+        <div class="case-closed-banner">Case closed</div>
+        <div class="completion-card">
+          <div class="completion-title">Nice work!</div>
+          <div class="completion-body">You did the right thing by offering Deshawn the peace of mind of an open case just in case the issue reappeared. Some crashes are one-off issues that can't be reproduced either due to other apps running on the machine, or other issues outside the realm of our software. No need to log a bug this time. Case closed.</div>
+          <a href="Crash Bugs Cases.html" class="call-btn" style="margin-top:16px;"
+            data-mark-closed="case3closed">
+            <span class="material-symbols-outlined">arrow_forward</span>
+            Own another case
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Details -->
+  <div class="details-pane">
+    <div class="details-label">Details</div>
+    <div class="details-content">
+      <div class="detail-field">
+        <div class="detail-field-label">Case Number</div>
+        <div class="detail-field-value link">00100003</div>
+      </div>
+      <div class="detail-field">
+        <div class="detail-field-label">Contact Name</div>
+        <div class="detail-field-value">Deshawn R.</div>
+      </div>
+      <div class="detail-field">
+        <div class="detail-field-label">Date Opened</div>
+        <div class="detail-field-value">4/28/2026, 8:47 AM</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+<script src="case.js"></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case 00100004 – Crash Bugs</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="sf-page">
+
+<!-- Global Nav -->
+<div class="global-nav">
+  <div class="global-nav-logo"><span class="material-symbols-outlined">cloud</span>TechSupport</div>
+  <div class="global-nav-search"><span class="material-symbols-outlined">search</span>Search...</div>
+  <div class="global-nav-icons">
+    <span class="material-symbols-outlined">home</span>
+    <span class="material-symbols-outlined">add_circle</span>
+    <span class="material-symbols-outlined">notifications</span>
+    <span class="material-symbols-outlined">help</span>
+    <span class="material-symbols-outlined">settings</span>
+    <div class="avatar">YO</div>
+  </div>
+</div>
+
+<!-- App Nav -->
+<div class="app-nav">
+  <div class="app-nav-item"><span class="material-symbols-outlined" style="font-size:15px">grid_view</span></div>
+  <div class="app-nav-item">Home</div>
+  <div class="app-nav-item active">Cases</div>
+  <div class="app-nav-item">Accounts</div>
+  <div class="app-nav-item">Contacts</div>
+  <div class="app-nav-item">Reports</div>
+</div>
+
+<!-- Case Header -->
+<div class="case-header">
+  <div class="case-breadcrumb"><a href="Crash Bugs Cases.html">Cases</a> / All Unowned Cases</div>
+  <div class="case-title-row">
+    <div class="case-icon"><span class="material-symbols-outlined">cases</span></div>
+    <div>
+      <div class="case-title">This tool used to work</div>
+      <div class="case-subtitle">Case 00100004 · Nadine K. · Opened 4/28/2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- Body -->
+<div class="case-body">
+
+  <div class="feed-pane">
+    <div class="feed-label">Feed</div>
+    <div class="feed-content">
+
+      <!-- Email from Nadine -->
+      <div class="email-card">
+        <div class="email-header">
+          <div class="email-avatar">NK</div>
+          <div>
+            <div class="email-from">Nadine K.</div>
+            <div class="email-addr">nadine.k@example.com</div>
+          </div>
+          <div class="email-date">4/28/2026, 11:30 AM</div>
+        </div>
+        <div class="email-subject-row">
+          <div class="email-subject-label">Subject</div>
+          <div class="email-subject-value">This tool used to work</div>
+        </div>
+        <div class="email-body">
+          <p>Hi Support,</p>
+          <p>I upgraded my version of the software yesterday, and now I can't use this tool on my data without the software crashing. Is this a bug?</p>
+          <p class="email-sig">Nadine</p>
+        </div>
+      </div>
+
+      <!-- Action: Call Nadine -->
+      <button class="call-btn"
+        data-reveals="chatLog"
+        data-also-reveals="logNotesBtn"
+        data-also-delay="300">
+        <span class="material-symbols-outlined">call</span>
+        Call Nadine
+      </button>
+
+      <!-- Call transcript -->
+      <div id="chatLog" class="chat-log" style="display:none">
+        <div class="chat-label">
+          <span class="material-symbols-outlined">call</span>
+          Transcript: Phone call with Nadine K. 4/28/2026 11:45 AM
+        </div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Hi Nadine, I'm with technical support. I just owned your case, and I want to get some more information about what you're seeing. Are you available to chat now?</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Nadine K.</div><div class="bubble-text">Yes thank you for calling! Here's how I get the crash, it happens every time. I query a table that's participating in a complex data model, and then I try to add new records. This used to work, but after I upgraded, I get a crash. Just like that, see?</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Oh interesting, I need to look something up about that particular data model. Do you want me to place you on a brief hold while I do that or just give you a call back later?</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Nadine K.</div><div class="bubble-text">I'm actually about to head into another meeting, so please just call me back later.</div></div>
+        <div class="chat-end-note">Call ended</div>
+      </div>
+
+      <!-- Action: Log case notes -->
+      <button id="logNotesBtn" class="call-btn" style="display:none"
+        data-reveals="caseNotes"
+        data-also-reveals="decisionCard">
+        <span class="material-symbols-outlined">edit_note</span>
+        Log case notes
+      </button>
+
+      <!-- Case notes -->
+      <div id="caseNotes" class="notes-card" style="display:none">
+        <div class="notes-label">Case notes</div>
+        <div class="notes-body">
+          <ul>
+            <li>Nadine is editing tables in a complex data model.</li>
+            <li>Editing causes a crash reliably.</li>
+            <li>Issue not present before latest upgrade.</li>
+            <li>Repoduced the crash with sample data locally on my own machine.</li>
+            <li>Confirmed with documentation that the tables are not editable.</li>
+            <li>Unsupported workflow.</li>
+          </ul>
+      </div>
+      </div>
+
+      <!-- Decision: Log a crash bug? -->
+      <div id="decisionCard" class="decision-card" style="display:none">
+        <div class="decision-prompt">You have a set of reproducible steps that produce a crash, but this isn't a supported workflow. Should you log a crash bug?</div>
+        <div class="decision-btns">
+          <button class="call-btn" data-reveals="feedbackYes">Yes</button>
+          <button class="call-btn" data-reveals="feedbackNo">No</button>
+        </div>
+      </div>
+
+      <!-- Decision feedback: Yes (correct) -->
+      <div id="feedbackYes" class="feedback-card green" style="display:none">
+        <p>Wise choice. Even if the workflow is unsupported, the software should catch the error and display a message, not unexpectedly quit. Regardless of if the workflow is supported or not, the software should not crash.</p>
+        <button class="call-btn" style="margin-top:12px;"
+          data-reveals="bugLogged"
+          data-also-reveals="emailNadine1Btn">Log a crash bug</button>
+      </div>
+
+      <!-- Decision feedback: No (incorrect) -->
+      <div id="feedbackNo" class="feedback-card yellow" style="display:none">
+        <p>Not quite. Even if the workflow is unsupported, the software should catch the error and display a message, not unexpectedly quit. Regardless of if the workflow is supported or not, the software should not crash.</p>
+        <button class="call-btn" style="margin-top:12px;"
+          data-reveals="bugLogged"
+          data-also-reveals="emailNadine1Btn">Log a crash bug</button>
+      </div>
+
+      <!-- Case status: Bug logged -->
+      <div id="bugLogged" class="case-closed-banner" style="display:none">Bug logged</div>
+
+      <!-- Action: Email Nadine -->
+      <button id="emailNadine1Btn" class="call-btn" style="display:none"
+        data-reveals="emailOut1"
+        data-also-reveals="answerCallBtn">
+        <span class="material-symbols-outlined">mail</span>
+        Email Nadine
+      </button>
+
+      <!-- Outgoing email from You -->
+      <div id="emailOut1" class="email-card" style="display:none">
+        <div class="email-header">
+          <div class="email-avatar" style="background:#c9b1e8;color:#9b59b6;">YO</div>
+          <div>
+            <div class="email-from">You</div>
+            <div class="email-addr">you@techsupport.com</div>
+          </div>
+          <div class="email-date">4/28/2026, 1:15 PM</div>
+        </div>
+        <div class="email-subject-row">
+          <div class="email-subject-label">Subject</div>
+          <div class="email-subject-value">Re: This tool used to work</div>
+        </div>
+        <div class="email-body">
+          <p>Hi Nadine,</p>
+          <p>I have an update on your case. I've logged a bug on your behalf for the crashing, but I also need to talk with you about your editing workflow. There's another method that's supported and won't cause a crash. When's a good time to chat?</p>
+        </div>
+      </div>
+
+      <!-- Action: Answer call from Nadine -->
+      <button id="answerCallBtn" class="call-btn" style="display:none"
+        data-reveals="chatLog2"
+        data-also-reveals="phase2Group"
+        data-also-delay="400">
+        <span class="material-symbols-outlined">call</span>
+        Answer call from Nadine
+      </button>
+
+      <!-- Call transcript: Nadine calls back -->
+      <div id="chatLog2" class="chat-log" style="display:none">
+        <div class="chat-label">
+          <span class="material-symbols-outlined">call</span>
+          Transcript: Incoming call from Nadine K. 4/28/2026 3:02 PM
+        </div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Hi Nadine! Thanks for calling me back so soon. I reproduced the crash with a sample dataset of my own and confirmed that this is a bug. From here, you can track the status of the bug on your account page, and I want to share this documentation for how to make changes to those tables in a way that won't cause a crash.</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Nadine K.</div><div class="bubble-text">Oh that's good news. On my last call, our team was even talking about migrating to a more modern data model that better fits our needs in the long term.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">That's a great idea. If you ever run into issues with that migration, you can always call us back. Is there anything else I can help with?</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Nadine K.</div><div class="bubble-text">Nope, thank you! We can close this case.</div></div>
+        <div class="chat-end-note">Call ended</div>
+      </div>
+
+      <!-- Case closed + first completion + bug notification + email Nadine -->
+      <div id="phase2Group" class="feed-group" style="display:none">
+
+        <div class="case-closed-banner">Case closed</div>
+
+        <div class="completion-card">
+          <div class="completion-title">Nice work!</div>
+          <div class="completion-body">You correctly logged a crash bug for reproducible behavior that results in a crash. Remember, we never want the software to close unexpectedly.</div>
+        </div>
+
+        <div class="notes-card">
+          <div class="notes-label">Attached bug notification</div>
+          <div class="notes-body">A bug attached to this case has been resolved in Patch #002482.</div>
+        </div>
+
+        <button class="call-btn"
+          data-reveals="finalGroup">
+          <span class="material-symbols-outlined">mail</span>
+          Email Nadine
+        </button>
+
+      </div>
+
+      <!-- Final email exchange + completion -->
+      <div id="finalGroup" class="feed-group" style="display:none">
+
+        <div class="email-card">
+          <div class="email-header">
+            <div class="email-avatar" style="background:#c9b1e8;color:#9b59b6;">YO</div>
+            <div>
+              <div class="email-from">You</div>
+              <div class="email-addr">you@techsupport.com</div>
+            </div>
+            <div class="email-date">5/15/2026, 10:30 AM</div>
+          </div>
+          <div class="email-subject-row">
+            <div class="email-subject-label">Subject</div>
+            <div class="email-subject-value">Re: This tool used to work</div>
+          </div>
+          <div class="email-body">
+            <p>HI Nadine,</p>
+            <p>I jsut wanted to let you know that the bug we encountered last month has now been resolved in the latest software patch. You can find the patch on your account page. Let me know if you need any assistance with the install.</p>
+          </div>
+        </div>
+
+        <div class="email-card">
+          <div class="email-header">
+            <div class="email-avatar">NK</div>
+            <div>
+              <div class="email-from">Nadine K.</div>
+              <div class="email-addr">nadine.k@example.com</div>
+            </div>
+            <div class="email-date">5/15/2026, 11:04 AM</div>
+          </div>
+          <div class="email-subject-row">
+            <div class="email-subject-label">Subject</div>
+            <div class="email-subject-value">Re: This tool used to work</div>
+          </div>
+          <div class="email-body">
+            <p>Hello,</p>
+            <p>Thank you so much for notifying me! I just downloaded the latest patch and it works! I did not think the developers could resolve the bug so fast!</p>
+          </div>
+        </div>
+
+        <div class="completion-card">
+          <div class="completion-title">Nice work!</div>
+          <div class="completion-body">Following up with Nadine directly was a nice touch.</div>
+          <a href="Crash Bugs Cases.html" class="call-btn" style="margin-top:16px;"
+            data-mark-closed="case4closed">
+            <span class="material-symbols-outlined">arrow_forward</span>
+            Own another case
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Details -->
+  <div class="details-pane">
+    <div class="details-label">Details</div>
+    <div class="details-content">
+      <div class="detail-field">
+        <div class="detail-field-label">Case Number</div>
+        <div class="detail-field-value link">00100004</div>
+      </div>
+      <div class="detail-field">
+        <div class="detail-field-label">Contact Name</div>
+        <div class="detail-field-value">Nadine K.</div>
+      </div>
+      <div class="detail-field">
+        <div class="detail-field-label">Date Opened</div>
+        <div class="detail-field-value">4/28/2026, 11:30 AM</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+<script src="case.js"></script>
+</body>
+</html>

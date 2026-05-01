@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crash Bugs – Intro</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="m3-page">
+
+<!-- Top App Bar -->
+<div class="top-bar">
+  <span class="material-symbols-outlined">bug_report</span>
+  <span class="top-bar-title">Crash Bugs</span>
+  <span class="top-bar-chip">10 min</span>
+</div>
+
+<div class="page">
+
+  <!-- Hero icon -->
+  <div class="hero-icon">
+    <span class="material-symbols-outlined">bug_report</span>
+  </div>
+
+  <!-- Intro text -->
+  <div>
+    <div class="intro-eyebrow">Simulation · Technical Support</div>
+    <h1 class="intro-heading">We hope our users never experience a crash.</h1>
+    <p class="intro-body">
+      But when customers do report crashes to us, it's important that we understand the best procedures for what to do with that information.<br><br>
+      The product team is committed to making the software the highest quality product on the market. In technical support, we make the product better by notifying the product team when something needs addressing. In this simulation we're going to focus on notifying the product team of reproducible crashes through <strong>logging crash bugs</strong>.
+    </p>
+  </div>
+
+  <!-- Meta -->
+  <div class="meta-row">
+    <div class="meta-item">
+      <span class="material-symbols-outlined">schedule</span>
+      10 minutes
+    </div>
+    <div class="meta-item">
+      <span class="material-symbols-outlined">cases</span>
+      4 cases to own
+    </div>
+    <div class="meta-item">
+      <span class="material-symbols-outlined">school</span>
+      Technical Support
+    </div>
+  </div>
+
+  <!-- Accordions -->
+  <div>
+    <div class="accordion-heading">Learn more about crashes and crash bugs</div>
+    <div class="accordion-stack">
+
+      <div class="accordion" id="acc1">
+        <button class="accordion-trigger" onclick="toggle('acc1')" aria-expanded="false">
+          <div class="accordion-icon"><span class="material-symbols-outlined">help</span></div>
+          <span class="accordion-label">What is a crash?</span>
+          <span class="material-symbols-outlined accordion-chevron">expand_more</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="accordion-body-content">
+              Crashes happen when the software is unable to gracefully catch an error, and it instead stops working and closes unexpectedly.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion" id="acc2">
+        <button class="accordion-trigger" onclick="toggle('acc2')" aria-expanded="false">
+          <div class="accordion-icon"><span class="material-symbols-outlined">warning</span></div>
+          <span class="accordion-label">Why are crashes bad?</span>
+          <span class="material-symbols-outlined accordion-chevron">expand_more</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="accordion-body-content">
+              If you've ever personally experienced a crash in any software, you probably don't need anyone to explain this to you. When software crashes, users risk losing unsaved work, orphaning edits in an enterprise geodatabase, losing their license, and more.<br><br>
+              If an error occurs in the software, we expect that the software will catch that error and display a message to the user explaining why something cannot work properly. <strong>Crashing is an unhelpful response to an error.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion" id="acc3">
+        <button class="accordion-trigger" onclick="toggle('acc3')" aria-expanded="false">
+          <div class="accordion-icon"><span class="material-symbols-outlined">check_circle</span></div>
+          <span class="accordion-label">When is it appropriate to log a crash bug?</span>
+          <span class="material-symbols-outlined accordion-chevron">expand_more</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="accordion-body-content">
+              Any crash that can be reproduced should be logged as a crash bug. Any time you have a workflow where a series of <strong>repeatable steps produces a crash</strong>, log a crash bug.<br><br>
+              To obtain repeatable steps, apply the problem-solving framework:<br><strong>Understand → Interrogate → Explain</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion" id="acc4">
+        <button class="accordion-trigger" onclick="toggle('acc4')" aria-expanded="false">
+          <div class="accordion-icon"><span class="material-symbols-outlined">cancel</span></div>
+          <span class="accordion-label">When is it <em>not</em> appropriate to log a crash bug?</span>
+          <span class="material-symbols-outlined accordion-chevron">expand_more</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="accordion-body-content">
+              <strong>Non-reproducible crashes</strong> should not be logged as bugs. You are logging steps that a developer can use to reproduce, examine, and resolve the problem—if they can't reproduce it, they can't resolve it.<br><br>
+              <strong>Crashes due to unmet minimum system requirements</strong> should also not be logged as crash bugs.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA card -->
+  <div class="cta-card">
+    <div class="cta-card-title">Ready to apply this knowledge?</div>
+    <div class="cta-card-body">In the next section, you'll own one of four real support cases and decide whether to log a crash bug. Each case presents a unique scenario.</div>
+    <button class="cta-btn" onclick="startSimulation()">
+      <span class="material-symbols-outlined">play_arrow</span>
+      Start simulation
+    </button>
+  </div>
+
+  <div class="footer-note">Questions or issues with this simulation? Email the training leads.</div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

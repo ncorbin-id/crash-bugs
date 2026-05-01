@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case 00100001 – Crash Bugs</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="sf-page">
+
+<!-- Global Nav -->
+<div class="global-nav">
+  <div class="global-nav-logo"><span class="material-symbols-outlined">cloud</span>TechSupport</div>
+  <div class="global-nav-search"><span class="material-symbols-outlined">search</span>Search...</div>
+  <div class="global-nav-icons">
+    <span class="material-symbols-outlined">home</span>
+    <span class="material-symbols-outlined">add_circle</span>
+    <span class="material-symbols-outlined">notifications</span>
+    <span class="material-symbols-outlined">help</span>
+    <span class="material-symbols-outlined">settings</span>
+    <div class="avatar">YO</div>
+  </div>
+</div>
+
+<!-- App Nav -->
+<div class="app-nav">
+  <div class="app-nav-item"><span class="material-symbols-outlined" style="font-size:15px">grid_view</span></div>
+  <div class="app-nav-item">Home</div>
+  <div class="app-nav-item active">Cases</div>
+  <div class="app-nav-item">Accounts</div>
+  <div class="app-nav-item">Contacts</div>
+  <div class="app-nav-item">Reports</div>
+</div>
+
+<!-- Case Header -->
+<div class="case-header">
+  <div class="case-breadcrumb"><a href="Crash Bugs Cases.html">Cases</a> / All Unowned Cases</div>
+  <div class="case-title-row">
+    <div class="case-icon"><span class="material-symbols-outlined">cases</span></div>
+    <div>
+      <div class="case-title">These tools keep crashing!</div>
+      <div class="case-subtitle">Case 00100001 · Burt G. · Opened 4/28/2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- Body -->
+<div class="case-body">
+
+  <div class="feed-pane">
+    <div class="feed-label">Feed</div>
+    <div class="feed-content">
+
+      <!-- Email from Burt -->
+      <div class="email-card">
+        <div class="email-header">
+          <div class="email-avatar">BG</div>
+          <div>
+            <div class="email-from">Burt G.</div>
+            <div class="email-addr">burt.g@example.com</div>
+          </div>
+          <div class="email-meta">4/28/2026, 9:14 AM</div>
+        </div>
+        <div class="email-subject-row">
+          <div class="email-subject-label">Subject</div>
+          <div class="email-subject-value">These tools keep crashing!</div>
+        </div>
+        <div class="email-body">
+          <p>Hi tech support,</p>
+          <p>I'm trying to run the raster analysis tools for deep learning, the ones that run on my web server. Every time I try to run them with any inputs, the software crashes. Please advise.</p>
+          <p class="email-sig">Thank you,<br>Burt G, GISP</p>
+        </div>
+      </div>
+
+      <!-- Action: Call Burt -->
+      <button class="call-btn"
+        data-reveals="chatLog"
+        data-also-reveals="logNotesBtn"
+        data-also-delay="300">
+        <span class="material-symbols-outlined">call</span>
+        Call Burt
+      </button>
+
+      <!-- Call transcript 1 -->
+      <div id="chatLog" class="chat-log" style="display:none">
+        <div class="chat-label">
+          <span class="material-symbols-outlined">call</span>
+          Transcript: Phone call with Burt G. 4/28/2026 9:31 AM
+        </div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Hi Burt, thanks for taking my call. I got your email about the raster analysis tools crashing. Would you be able to share your screen so I can see what's happening?</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Burt G.</div><div class="bubble-text">Sure, give me just a second. Okay, I'm sharing now. So here's the tool—I'll go ahead and run it.</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Burt G.</div><div class="bubble-text">See? Crashed. I can try a different input if you want, but it does the same thing every time.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Yes, let's try one more input just to confirm. <em>(After testing)</em> You're right, it crashes regardless of input. Is anyone else in your office using these tools? I want to see if this is specific to your machine.</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Burt G.</div><div class="bubble-text">No, just me. I'm the only one who's tried these particular web server tools so far.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Got it. Have you used any of the other deep learning tools successfully—like the ones that run locally on the desktop rather than through the web server?</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Burt G.</div><div class="bubble-text">Yes, actually. The local desktop ones work fine for me. It's only these web server tools that are crashing.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">That's really helpful context, thank you. I want to do a bit more testing on my end. Would it be okay if I call you back once I've had a chance to run some tests?</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Burt G.</div><div class="bubble-text">Absolutely, no problem. I'll be at my desk all afternoon.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Perfect. I'll be in touch soon—thanks, Burt.</div></div>
+        <div class="chat-end-note">Call ended</div>
+      </div>
+
+      <!-- Action: Log case notes -->
+      <button id="logNotesBtn" class="call-btn" style="display:none"
+        data-reveals="caseNotes"
+        data-also-reveals="decisionCard">
+        <span class="material-symbols-outlined">edit_note</span>
+        Log case notes
+      </button>
+
+      <!-- Case notes -->
+      <div id="caseNotes" class="notes-card" style="display:none">
+        <div class="notes-label">Case notes</div>
+        <div class="notes-body">Reproduced crash with sample dataset on latest software version. Customer also using latest software version.</div>
+      </div>
+
+      <!-- Decision: Log a crash bug? -->
+      <div id="decisionCard" class="decision-card" style="display:none">
+        <div class="decision-prompt">Do you log a crash bug?</div>
+        <div class="decision-btns">
+          <button class="call-btn" data-reveals="bugLogged" data-also-reveals="callBurt2Btn">Yes</button>
+          <button class="call-btn" data-reveals="feedbackNo">No</button>
+        </div>
+      </div>
+
+      <!-- Decision feedback: No (incorrect) -->
+      <div id="feedbackNo" class="feedback-card yellow" style="display:none">
+        <p>At this point, you have reproducible steps that consistently produce a crash. The product team will be able to take this workflow, reproduce it, and examine a possible resolution from here. Remember that the software shouldn't crash as a response to an error. If there is an error, it should be handled gracefully and not unexpectedly close. You should proceed with logging a crash bug.</p>
+        <button class="call-btn" style="margin-top:12px;"
+          data-reveals="bugLogged"
+          data-also-reveals="callBurt2Btn">Log a crash bug</button>
+      </div>
+
+      <!-- Case status: Bug logged -->
+      <div id="bugLogged" class="case-closed-banner" style="display:none">Bug logged</div>
+
+      <!-- Action: Call Burt (follow-up) -->
+      <button id="callBurt2Btn" class="call-btn" style="display:none"
+        data-reveals="chatLog2"
+        data-also-reveals="completion"
+        data-also-delay="400">
+        <span class="material-symbols-outlined">call</span>
+        Call Burt
+      </button>
+
+      <!-- Call transcript 2 -->
+      <div id="chatLog2" class="chat-log" style="display:none">
+        <div class="chat-label">
+          <span class="material-symbols-outlined">call</span>
+          Transcript: Phone call with Burt G. 4/28/2026 2:14 PM
+        </div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Hi Burt, thanks for your patience. I wanted to call you back with an update on your case.</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Burt G.</div><div class="bubble-text">Of course, what did you find out?</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">I was able to reproduce the crash on my end using a sample dataset, so I've gone ahead and logged a bug with the product team. This confirms it's not something specific to your machine.</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Burt G.</div><div class="bubble-text">Oh—that's a bit disappointing to hear, but I'm glad you were able to confirm it and report it.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Completely understandable. You can track the status of the bug using the link I'll send over. In the meantime, the local desktop deep learning tools you mentioned should still work as expected for your workflows.</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Burt G.</div><div class="bubble-text">Good to know. That helps. Is there anything else I should do on my end?</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Nothing else needed from you right now. I'll keep the case open until the fix is released. Is there anything else I can help you with today?</div></div>
+        <div class="chat-bubble customer"><div class="bubble-name">Burt G.</div><div class="bubble-text">No, that's everything. Thanks for following up so quickly. You can go ahead and close my case.</div></div>
+        <div class="chat-bubble you"><div class="bubble-name">You</div><div class="bubble-text">Happy to help, Burt. Take care!</div></div>
+        <div class="chat-end-note">Call ended</div>
+      </div>
+
+      <!-- Case closed + Own another case -->
+      <div id="completion" class="feed-group" style="display:none">
+        <div class="case-closed-banner">Case closed</div>
+        <div class="completion-card">
+          <div class="completion-title">Nice work!</div>
+          <div class="completion-body">You correctly identified a reproducible crash and logged a crash bug. Burt's case is now closed.</div>
+          <a href="Crash Bugs Cases.html" class="call-btn" style="margin-top:16px;"
+            data-mark-closed="case1closed">
+            <span class="material-symbols-outlined">arrow_forward</span>
+            Own another case
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Details -->
+  <div class="details-pane">
+    <div class="details-label">Details</div>
+    <div class="details-content">
+      <div class="detail-field">
+        <div class="detail-field-label">Case Number</div>
+        <div class="detail-field-value link">00100001</div>
+      </div>
+      <div class="detail-field">
+        <div class="detail-field-label">Contact Name</div>
+        <div class="detail-field-value">Burt G.</div>
+      </div>
+      <div class="detail-field">
+        <div class="detail-field-label">Date Opened</div>
+        <div class="detail-field-value">4/28/2026, 9:14 AM</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+<script src="case.js"></script>
+</body>
+</html>
