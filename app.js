@@ -20,7 +20,7 @@ function updateFinalBtn(container) {
     });
     const icon = btn.querySelector('.material-symbols-outlined');
     if (icon) icon.textContent = 'check_circle';
-    if (btn.tagName === 'A') btn.href = 'Crash Bugs Complete.html';
+    if (btn.tagName === 'A') btn.href = 'close.html';
   }
 }
 
@@ -37,10 +37,10 @@ function toggle(id) {
 
 function startSimulation() {
   ['case1closed', 'case2closed', 'case3closed', 'case4closed'].forEach(k => localStorage.removeItem(k));
-  window.location.href = 'Crash Bugs Cases.html';
+  window.location.href = 'queue.html';
 }
 
 function restartSimulation() {
   ['case1closed', 'case2closed', 'case3closed', 'case4closed'].forEach(k => localStorage.removeItem(k));
-  window.location.href = 'Crash Bugs Intro.html';
+  window.location.href = 'index.html';
 }

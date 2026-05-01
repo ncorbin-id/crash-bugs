@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -i 's/href=\"Crash Bugs Cases\\\\.html\"/href=\"queue.html\"/g' \"Crash Bugs Case 1.html\" \"Crash Bugs Case 2.html\" \"Crash Bugs Case 3.html\" \"Crash Bugs Case 4.html\")",
+      "Bash(sed -i 's/href=\"Crash Bugs Case 3\\\\.html\"/href=\"case3.html\"/g; s/href=\"Crash Bugs Case 4\\\\.html\"/href=\"case4.html\"/g' \"Crash Bugs Cases.html\")",
+      "Bash(git mv *)",
+      "Bash(git rm *)"
+    ]
+  }
+}

@@ -23,10 +23,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function ownCase(id, btn) {
   if (btn.classList.contains('done')) return;
-  if (id === 1) { window.location.href = 'Crash Bugs Case 1.html'; return; }
-  if (id === 2) { window.location.href = 'Crash Bugs Case 2.html'; return; }
-  if (id === 3) { window.location.href = 'Crash Bugs Case 3.html'; return; }
-  if (id === 4) { window.location.href = 'Crash Bugs Case 4.html'; return; }
+  if (id === 1) { window.location.href = 'case1.html'; return; }
+  if (id === 2) { window.location.href = 'case2.html'; return; }
+  if (id === 3) { window.location.href = 'case3.html'; return; }
+  if (id === 4) { window.location.href = 'case4.html'; return; }
   btn.classList.add('done');
   btn.textContent = '✓ Owned';
   const row = document.querySelector(`tr[data-id="${id}"]`);
